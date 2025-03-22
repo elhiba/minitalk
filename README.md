@@ -10,13 +10,13 @@ MiniTalk is a small project that has helped me understand how to communicate wit
 
 **Mandatory:**
 
-1. **Build the project:**  
-   Run the following command:
-   ```shell
+1. **Build the project:**
+	Run the following command:
+	```shell
    make
    ```
 
-2. **Open two terminal windows:**  
+2. **Open two terminal windows:**
    In the first terminal, start the server:
    ```shell
    ./server
@@ -31,12 +31,16 @@ MiniTalk is a small project that has helped me understand how to communicate wit
    ```
 
 **Bonus:**
-
-1. To run the bonus server, use:
+1. **Build the project:**
+   Run the following command:
+   ```shell
+   make bonus
+   ```
+2. To run the bonus server, use:
    ```shell
    ./server_bonus
    ```
-2. In another terminal, run the bonus client:
+3. In another terminal, run the bonus client:
    ```shell
    ./client_bonus <pid> "your message"
    ```
