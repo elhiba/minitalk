@@ -6,32 +6,39 @@
 	MiniTalk
 </h1> 
 
-MiniTalk is a small project help me a lot to understand how can i communicate with other programs!
+MiniTalk is a small project that has helped me understand how to communicate with other programs.
 
-Here how to run / test mandatory!
+**Mandatory:**
 
-First run make:
+1. **Build the project:**  
+   Run the following command:
+   ```shell
+   make
+   ```
 
-```shell
-make
-```
+2. **Open two terminal windows:**  
+   In the first terminal, start the server:
+   ```shell
+   ./server
+   ```
+   In the second terminal, run the client:
+   ```shell
+   ./client <pid> <your message>
+   ```
+   For example:
+   ```shell
+   ./client 9472 "Hi there!"
+   ```
 
-Split or create a two terminals:
+**Bonus:**
 
-Run:
+1. To run the bonus server, use:
+   ```shell
+   ./server_bonus
+   ```
+2. In another terminal, run the bonus client:
+   ```shell
+   ./client_bonus <pid> "your message"
+   ```
 
-```shell
-./server
-```
-
-And then:
-
-```shell
-./client <pid> <Your message>
-
-# for example
-
-./client 9472 "Hi there!"
-```
-
-> By Odin, by Thor ! Use your brain !!!
+> By Odin, by Thor! Use your brain!
