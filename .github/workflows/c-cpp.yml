@@ -14,25 +14,21 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Install dependencies
-      run: sudo apt-get update && sudo apt-get install -y build-essential
+      run: sudo apt-get update && sudo apt-get install -y build-essential procps
 
     - name: Compile project
       run: make
 
     - name: Test client-server communication
       run: |
-        # Start the server in the background and capture its PID
-        ./server > server.log 2>&1 &
-        SERVER_PID=$!
+        # Start server in background
+        ./server &
+        
+        sleep 2
 
-        # Wait for the server to start and print its PID
-        sleep 2  # Give the server time to initialize
-        SERVER_PID=$(grep -oP "PID: \K\d+" server.log)
-        echo "Server PID: $SERVER_PID"
+        # Send test message via client
+        ./client $(pgrep -n server) "Hello from GitHub Actions!"
 
-        # Send a message via the client
-        ./client "$SERVER_PID" "Hello from GitHub Actions!"
-
-        # Terminate the server after the test
-        kill "$SERVER_PID" || true
-      timeout-minutes: 2 
+        # Kill server (forcefully if needed)
+        kill -9  $(pgrep -n server) || true
+      timeout-minutes: 2
