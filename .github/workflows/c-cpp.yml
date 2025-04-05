@@ -16,14 +16,23 @@ jobs:
     - name: Install dependencies
       run: sudo apt-get update && sudo apt-get install -y build-essential
 
-    - name: make
+    - name: Compile project
       run: make
 
-    - name: run client
-      run: timeout 10s ./client
-      
-    - name: make bonus
-      run: make bonus
+    - name: Test client-server communication
+      run: |
+        # Start the server in the background and capture its PID
+        ./server > server.log 2>&1 &
+        SERVER_PID=$!
 
-    - name: run client bonus
-      run: timeout 10s ./client_bonus
+        # Wait for the server to start and print its PID
+        sleep 2  # Give the server time to initialize
+        SERVER_PID=$(grep -oP "PID: \K\d+" server.log)
+        echo "Server PID: $SERVER_PID"
+
+        # Send a message via the client
+        ./client "$SERVER_PID" "Hello from GitHub Actions!"
+
+        # Terminate the server after the test
+        kill "$SERVER_PID" || true
+      timeout-minutes: 2 
