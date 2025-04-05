@@ -20,4 +20,10 @@ jobs:
       run: make
 
     - name: run
-      run: timeout 10s ./minitalk
+      run: timeout 10s ./server; timeout 10s ./client
+      
+    - name: make bonus
+      run: make bonus
+
+    - name: run bonus
+      run: timeout 10s ./server_bonus; timeout 10s ./client_bonus
