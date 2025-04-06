@@ -2,10 +2,11 @@
 	<img src=".badge/minitalkm.png"/>
 </p> 
 
-<h1 align="center">
-	MiniTalk <br>
-![CI](https://github.com/elhiba/minitalk/actions/workflows/c-cpp.yml/badge.svg)
-</h1> 
+<h1 align="center">MiniTalk</h1>
+
+<p align="center">
+  <img src="https://github.com/elhiba/minitalk/actions/workflows/c-cpp.yml/badge.svg" alt="CI">
+</p>
 
 MiniTalk is a small project that has helped me understand how to communicate with other programs.
 
