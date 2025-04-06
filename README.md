@@ -4,7 +4,7 @@
 
 <h1 align="center">
 	MiniTalk <br>
-[CI](https://github.com/elhiba/minitalk/actions/workflows/c-cpp.yml/badge.svg)
+![CI](https://github.com/elhiba/minitalk/actions/workflows/c-cpp.yml/badge.svg)
 </h1> 
 
 MiniTalk is a small project that has helped me understand how to communicate with other programs.
